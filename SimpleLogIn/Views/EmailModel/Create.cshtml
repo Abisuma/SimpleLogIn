@@ -1,0 +1,44 @@
+﻿@model EmailModelView
+<h1>@ViewBag.msg</h1>
+
+<form  method="post" enctype="multipart/form-data">
+    @*<input asp-for="Id" hidden />*@
+    <input asp-for="EmailModel.ImageUrl" hidden />
+    <div class="row">
+        <div class="col-6  mx-auto card card-body">
+
+            <div class="mt-4 mb-3">
+                <input asp-for="@Model.EmailModel.FullName" placeholder="Name" type="text" />
+                <label asp-for="@Model.EmailModel.FullName"> Full Name</label>
+               
+            </div>
+
+            <div class="mt-4 mb-3">
+                <input asp-for="@Model.EmailModel.UserEmail" placeholder="Name" type="email" />
+                <label asp-for="@Model.EmailModel.UserEmail"> User Email</label>
+                <span>@TempData["errorEmail"]</span>
+            </div>
+            <div class="mb-3">
+                <input placeholder="Password" asp-for="@Model.EmailModel.Password" />
+                <label asp-for="@Model.EmailModel.Password"> Password</label>
+                
+            </div>
+
+            <div class=" mb-3 row p-1">
+                <label asp-for="@Model.EmailModel.ImageUrl" class="ms-2"></label>
+                <input type="file" name="imageUrl" id="imageUrl" class="form-control border-0 shadow" />
+                
+            </div>
+            <span class="text-warning"> @TempData["error"]</span>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6 col-md-3">
+            <button type="submit" class="btn btn-primary  mt-4 form-control">Sign Up</button>
+        </div>
+    </div>
+
+
+</form>
+

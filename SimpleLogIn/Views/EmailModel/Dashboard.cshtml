@@ -1,0 +1,15 @@
+﻿@model EmailModel
+<h1>Dash Board</h1>
+
+
+<div>
+
+   
+    <h1>Welcome @ViewBag.FullName </h1>
+    <div class="rounded-pill">
+        <img src="@ViewBag.ImageUrl" width = "30%"/>
+    </div>
+    <p>This is your dashboard.</p>
+
+    <a asp-controller="EmailModel" asp-action="Logout">Log Out</a>
+</div>

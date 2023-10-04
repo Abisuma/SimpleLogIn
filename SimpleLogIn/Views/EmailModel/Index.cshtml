@@ -1,0 +1,45 @@
+﻿@model List<EmailModel>
+
+<div class="container">
+    <div class="row pt-4 pb-4">
+        <div class=" col-6">
+            <h2 class="text-primary">
+                User List
+            </h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-controller="EmailModel" asp-action="Create" class="btn btn-primary">
+                SignUp 
+            </a>
+
+            <a asp-controller="EmailModel" asp-action="Login" class="btn btn-primary">
+                LogIn
+            </a>
+
+        </div>
+    </div>
+   <table class="table table-bordered table-striped" style="width: 100%">
+        <thead>
+            <tr>
+
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Image Url</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var item in Model)
+            {
+                <tr>
+                    <td>@item.FullName</td>
+                    <td>@item.UserEmail</td>
+                    <td>  @item.Password</td>
+                    <td>  @item.ImageUrl</td>
+                </tr>
+            }
+
+    </tbody>
+    </table>
+</div>

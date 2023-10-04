@@ -1,0 +1,35 @@
+﻿@model EmailModel
+
+<form method="post">
+    <div class="row">
+        <div class="col-6  mx-auto card card-body">
+
+            <div class="mt-4 mb-3">
+                <input asp-for="FullName" placeholder="Name" type="text" />
+                <label asp-for="FullName"> Full Name</label>
+                <span asp-validation-for="FullName"></span>
+            </div>
+
+            <div class="mt-4 mb-3">
+                <input asp-for="UserEmail" placeholder="Email" type="email" />
+                <label asp-for="UserEmail"> User Email</label>
+                <span asp-validation-for="UserEmail"></span>
+            </div>
+            <div class="mb-3">
+                <input placeholder="Password" type="password" asp-for="Password" />
+                <label asp-for="Password"> Password</label>
+                <span asp-validation-for="Password"></span>
+            </div>
+
+            <h2>@TempData["error"]</h2>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6 col-md-3">
+            <button type="submit" class="btn btn-primary  mt-4 form-control" asp-controller="EmailModel" asp-action="Login" >Login</button>
+        </div>
+    </div>
+</form>
+
