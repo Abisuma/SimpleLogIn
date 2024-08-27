@@ -185,7 +185,7 @@ namespace SimpleLogIn.Controllers
                 using (SmtpClient smtpClient = new SmtpClient("smtp.gmail.com"))
                 {
                     smtpClient.Port = 587;
-                    smtpClient.Credentials = new NetworkCredential("kadwales@gmail.com", "nhjxlqvxfqnnculo");
+                    smtpClient.Credentials = new NetworkCredential("kadwales@gmail.com", "iokioioii");
                     smtpClient.EnableSsl = true; // Use SSL if required
 
                     // Create the email message
